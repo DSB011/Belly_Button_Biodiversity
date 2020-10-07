@@ -3,18 +3,19 @@ function getPlots(id) {
 
 d3.json("samples.json").then(function(data){
     console.log(data)
-    var ids = data.samples[0].otu_ids;
+    var filter_data = data.samples.filter(sample => sample.id.toString()===id)[0]
+    var ids = filter_data.otu_ids;
     console.log(ids)
-    var samplevalues = data.samples[0].sample_values.slice(0,10).reverse();
+    var samplevalues = filter_data.sample_values.slice(0,10).reverse();
     console.log(samplevalues)
-    var otulabels = data.samples[0].otu_labels.slice(0,10);
+    var otulabels = filter_data.otu_labels.slice(0,10);
     console.log(otulabels)
-    var otu_top = (data.samples[0].otu_ids.slice(0,10)).reverse();
+    var otu_top = (filter_data.otu_ids.slice(0,10)).reverse();
     console.log(otu_top)
     
     var otu_id = otu_top.map(d => "otu" + d);
     console.log(`OTU IDS: ${otu_id}`)
-    var otulabels = data.samples[0].otu_labels.slice(0,10);
+    var otulabels = filter_data.otu_labels.slice(0,10);
     console.log(`OTU Labels: ${otulabels}`)
     
     
@@ -49,14 +50,14 @@ d3.json("samples.json").then(function(data){
     console.log("Before bubble");
     console.log(data.samples);
     var trace1 = {
-        x: data.samples[0].otu_ids,
-        y: data.samples[0].sample_values,
+        x: filter_data.otu_ids,
+        y: filter_data.sample_values,
         mode: "markers",
         marker: {
-            size: data.samples[0].sample_values,
-            color: data.samples[0].otu_ids
+            size: filter_data.sample_values,
+            color: filter_data.otu_ids
         },
-        text: data.samples[0].otu_labels
+        text: filter_data.otu_labels
     };
 
     var layout2 = {
@@ -93,7 +94,7 @@ function getdempographicsInfo(id){
 function optionChanged(id) {
     getPlots(id);
     getdempographicsInfo(id);
-    gaugeChart(id)
+    // gaugeChart(id)
 }
 
 function init()
