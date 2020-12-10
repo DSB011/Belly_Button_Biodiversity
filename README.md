@@ -1,4 +1,4 @@
-# Belly Button Biodiversity
+# Belly Button Biodiversity Using Plotly
 
 <img src = "https://github.com/DSB011/Belly_Button_Biodiversity/blob/master/Images/bacteria.jpg">
 
