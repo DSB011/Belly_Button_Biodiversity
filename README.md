@@ -13,7 +13,7 @@ I ceated an interactive dashboard to explore the [Belly Button Biodiversity data
 The [dataset](http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/) was taken from North Carolina State University's Public Science Lab. <br>
 I refered the article [A Jungle in There: Bacteria in Belly Buttons are Highly Diverse, but Predictable](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047712) to understand the information and data. 
 
-## Visualization
+## Visualizations
 
 Created an interactive visualization dashboard to explore Belly Biodiversity Dataset using various visualization techniques. The interactive visulaization consists
 of a drop-down menu, a bar graph and a scatter plot.
